@@ -1,0 +1,16 @@
+{
+  "shifts": [
+    {
+      "date": "2025-05-01",
+      "hours": 7.5,
+      "cash_tips": 82,
+      "credit": 45
+    },
+    {
+      "date": "2025-05-03",
+      "hours": 6,
+      "cash_tips": 50,
+      "credit": 70
+    }
+  ]
+}
