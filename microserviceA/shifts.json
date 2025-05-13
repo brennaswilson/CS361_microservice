@@ -11,6 +11,15 @@
       "hours": 6,
       "cash_tips": 50,
       "credit": 70
+    },
+    {
+      "date": "2025-10-03",
+      "hours": 6,
+      "cash_tips": 50,
+      "credit": 70
     }
-  ]
+  ],
+  "startDate": "2024-01-01",
+  "endDate": "2025-10-12",
+  "hourlyWage": 15.0
 }

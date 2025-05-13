@@ -1,4 +1,5 @@
 import zmq
+import json
 
 context = zmq.Context()
 socket = context.socket(zmq.REQ)
@@ -22,13 +23,17 @@ def main():
             hourly_wage = input("Hourly wage: ").strip()
             hourly_wage = float(hourly_wage)
 
-            data = {
-                "startDate": start_date,
-                "endDate": end_date,
-                "hourlyWage": hourly_wage
-            }
+            with open("shifts.json", "r") as file:
+                shift_data = json.load(file)
 
-            socket.send_json(data)
+            shift_data['startDate'] = start_date
+            shift_data['endDate'] = end_date
+            shift_data['hourlyWage'] = hourly_wage
+ 
+            with open('shifts.json', 'w') as file:
+                json.dump(shift_data, file, indent=2)
+
+            socket.send_string("Please create a report for the client…")
             print("Your report is being generated…\n")
             message = socket.recv_json()
             if "error" in message:
@@ -43,6 +48,8 @@ def main():
 def format_message(message):
     formatted_message = (
         f"Total hours worked: {message['total_hours_worked']}\n"
+        f"Total cash tips: ${message['cash_tips']}\n"
+        f"Total credit tips: ${message['credit_tips']}\n"
         f"Total tips: ${message['total_tips']}\n"
         f"Total wages: ${message['total_wages']}\n"
         f"Gross earnings: ${message['gross_earnings']}\n"
