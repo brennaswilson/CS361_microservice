@@ -30,7 +30,7 @@ Receiving Data
       Error: No shifts found in the specified date range.
 
 
-![image](https://github.com/user-attachments/assets/b4d99e06-d576-4e19-87f3-a23379b47ca4)
 
+![UML Diagram](https://github.com/user-attachments/assets/e2a57502-d60d-4314-9749-6c624719bbdc)
 
 
