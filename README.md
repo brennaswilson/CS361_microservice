@@ -4,13 +4,8 @@ Requirements before you can use the microservice:
 - pip install pyzmq
 
 Requesting Data
-- To send a request to the microservice, ensure the microservice is running, and use the ZeroMQ REQ socket and send a JSON object as shown below (user input data):
-      data = {
-          "startDate": "2024-05-01",
-          "endDate": "2024-05-03",
-          "hourlyWage": 15
-      }
-      socket.send_json(data)
+- To send a request to the microservice, ensure the microservice is running, and use the ZeroMQ REQ socket and send a string:
+      socket.send_string("Generate Report")
 
 - The microservice listens on: tcp://localhost:5555
 
@@ -22,17 +17,20 @@ Receiving Data
 
     earnings = {
         "total_hours_worked": hours_worked,
-        "total_tips": total_tips,
-        "total_wages": total_wages,
-        "gross_earnings": gross_earnings,
+        "cash_tips": round(cash_tips, 2),
+        "credit_tips": round(credit_tips, 2),
+        "total_tips": round(total_tips,2),
+        "total_wages": round(total_wages, 2),
+        "gross_earnings": round(gross_earnings, 2),
         "start_date": startDate.strftime("%Y-%m-%d"),
         "end_date": endDate.strftime("%Y-%m-%d"),
-    }      
+    }          
 
 - You may also receive an error message such as:
       Error: No shifts found in the specified date range.
 
 
-![image](https://github.com/user-attachments/assets/b6fcb8b7-1aa2-4043-b50b-8e55b744ba88)
+![image](https://github.com/user-attachments/assets/b4d99e06-d576-4e19-87f3-a23379b47ca4)
+
 
 
