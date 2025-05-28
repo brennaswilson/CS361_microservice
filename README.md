@@ -12,11 +12,12 @@ General Data:
 - hourlyWage: float or int
 - startDate: YYYY-MM-DD
 - endDate: YYYY-MM-DD
-Shifts Data:
+
+Shift Data:
 - Date: YYYY-MM-DD
 - Hours: Number of hours worked
 - Credit Card tips: int/float
-- Cash Tips: int/float 
+- Cash Tips: int/float
 - Example:
 
 ![image](https://github.com/user-attachments/assets/b38ece32-9dcf-48b8-b50a-27f04589e171)
