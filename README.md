@@ -7,15 +7,16 @@ Input Requirements:
 To generate a report, the microservice must receive, and expects, a shifts.json file which must be in the same directory. 
 
 The file must contain:
+
+General Data:
 - hourlyWage: float or int
 - startDate: YYYY-MM-DD
 - endDate: YYYY-MM-DD
-- shifts: list of individual shift records
-      - Each shift must contain:
-      - Date: YY-MM-DD
-      - Hours: Number of hours worked
-      - Credit Card tips: int/float
-      - Cash Tips: int/float 
+Shifts Data:
+- Date: YYYY-MM-DD
+- Hours: Number of hours worked
+- Credit Card tips: int/float
+- Cash Tips: int/float 
 - Example:
 
 ![image](https://github.com/user-attachments/assets/b38ece32-9dcf-48b8-b50a-27f04589e171)
